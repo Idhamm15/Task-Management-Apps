@@ -91,7 +91,6 @@ class MainApp extends StatelessWidget {
               },
             );
           },
-          AppRoute.home: (context) => const HomeAdminPage(),
           AppRoute.addEmployee: (context) => const AddEmployeePage(),
           AppRoute.addTask: (context) {
             User employee = ModalRoute.of(context)!.settings.arguments as User;

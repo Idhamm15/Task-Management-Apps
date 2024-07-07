@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "8821daff-ee2a-4dfc-931f-1c7c7316f39a",
+		"name": "Tusk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11794622"
+	},
+	"item": [
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "Add New",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"title 1\",\r\n    \"description\":\"desc\",\r\n    \"status\":\"Queue\",\r\n    \"dueDate\":\"2024-01-25 00:00:00\",\r\n    \"userId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/tasks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/tasks/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Statistic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/tasks/stat/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"stat",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Need to be Reviewed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/tasks/review/asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"review",
+								"asc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Progress",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/tasks/progress/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"progress",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Where User & Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/tasks/user/4/Rejected",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"user",
+								"4",
+								"Rejected"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "approvedDate",
+									"value": "2024-01-06 00:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/tasks/7/approve",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"7",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "submitDate",
+									"value": "2024-01-03 00:00:00",
+									"type": "text"
+								},
+								{
+									"key": "attachment",
+									"type": "file",
+									"src": "/C:/Users/Indra/Pictures/Screenshot_2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/tasks/1/submit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"1",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reject",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reason",
+									"value": "Terdapat kekurangan dibagian item chart, perlu di improve lagi",
+									"type": "text"
+								},
+								{
+									"key": "rejectedDate",
+									"value": "2024-01-03 00:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/tasks/1/reject",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"1",
+								"reject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fix",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "revision",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/tasks/1/fix",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"1",
+								"fix"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"toto\",\r\n    \"email\":\"toto@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/Employee",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"Employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"email\":\"owner@go.id\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://192.168.43.221:8080",
+			"type": "string"
+		}
+	]
+}
